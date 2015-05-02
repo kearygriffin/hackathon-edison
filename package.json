@@ -1,0 +1,13 @@
+{
+  "name": "node-edison",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "ThingWorx Catalyst",
+  "dependencies": {
+    "express": "~4.0.0",
+    "morgan": "~1.0.0",
+    "body-parser": "~1.0.1"
+  }
+}
