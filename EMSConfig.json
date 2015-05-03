@@ -1,0 +1,51 @@
+{
+    "log_level": "TRACE",
+    "rap_host": "127.0.0.1",
+    "rap_port": 443,
+    "keepAliveRate": 30000,
+    "remote_devices": [
+        {
+            "displayName": "Edison1",
+            "template": "RemoteEdisonTemplate",
+            "identifier": "Edison0001",
+            "updateRate": 2000
+        }
+    ],
+    "remote_templates": [
+        {
+            "RemoteEdisonTemplate": [
+
+                {
+                    "propertyName": "IPAddress",
+                    "baseType": "STRING",
+                    "pushType": "ALWAYS",
+                    "handler": "http",
+                    "key": "127.0.0.1:8010/ip"
+                },
+                {
+                    "serviceName": "BlinkPin",
+                    "description": "some remote service",
+                    "url": "127.0.0.1:8010/blink",
+                    "input": [
+                        {
+                            "name": "pinNumber",
+                            "baseType": "NUMBER",
+                            "description": "The pin number to blink"
+                        },
+                        {
+                            "name": "blinks",
+                            "baseType": "NUMBER",
+                            "description": "The number of times to blink"
+                        }
+                    ],
+                    "output": [
+                        {
+                            "baseType": "NOTHING",
+                            "description": "a success or error code"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
