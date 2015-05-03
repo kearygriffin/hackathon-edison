@@ -8,6 +8,8 @@ var utils      = require('./utils');
 var port       = process.env.PORT || 8010; // set our port
 var app        = express();
 
+var analogPin1 = new m.Aio(1); //setup access analog inpuput pin 0
+
 app.use(morgan('dev')); // log requests to the console
 var light = new groveSensor.GroveLight(0);
 
@@ -41,7 +43,6 @@ router.get('/lightSensor', function(req, res) {
 router.get('/moistureSensor', function(req, res) {
 	var value = 0
 	try{
-		var analogPin1 = new m.Aio(1); //setup access analog inpuput pin 0
 		value = analogPin1.read(); //read the value of the analog pin
 	}catch(error){
 		value = 0
