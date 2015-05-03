@@ -23,6 +23,20 @@
                     "key": "127.0.0.1:8010/ip"
                 },
                 {
+                    "propertyName": "LightSensor",
+                    "baseType": "NUMBER",
+                    "pushType": "ALWAYS",
+                    "handler": "http",
+                    "key": "127.0.0.1:8010/lightSensor"
+                },
+                {
+                    "propertyName": "MoistureSensor",
+                    "baseType": "NUMBER",
+                    "pushType": "ALWAYS",
+                    "handler": "http",
+                    "key": "127.0.0.1:8010/moistureSensor"
+                },
+                {
                     "serviceName": "BlinkPin",
                     "description": "some remote service",
                     "url": "127.0.0.1:8010/blink",
