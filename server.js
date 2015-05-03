@@ -38,6 +38,16 @@ router.get('/lightSensor', function(req, res) {
 	}
 	res.json({value: value})
 });
+router.get('/moistureSensor', function(req, res) {
+	var value = 0
+	try{
+		var analogPin1 = new m.Aio(1); //setup access analog inpuput pin 0
+		value = analogPin1.read(); //read the value of the analog pin
+	}catch(error){
+		value = 0
+	}
+	res.json({value: value})
+});
 router.get('/ip', function(req, res){
     console.log('getting IP')
     var ip = utils.getIP()
